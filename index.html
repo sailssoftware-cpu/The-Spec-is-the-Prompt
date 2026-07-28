@@ -66,7 +66,7 @@
   #sails-spec-blog img { max-width: 100%; }
 
   /* ── Layout shells ────────────────────────────────────── */
-  #sails-spec-blog .wrap { max-width: 880px; margin: 0 auto; padding: 0 32px; }
+  #sails-spec-blog .wrap { max-width: 880px; margin: 0 auto; padding: 0 32px; overflow-wrap: break-word; }
   #sails-spec-blog .wrap-wide { max-width: 1080px; margin: 0 auto; padding: 0 32px; }
   #sails-spec-blog section { padding: 72px 0; }
 
@@ -84,13 +84,16 @@
     font-size: 34px; font-weight: 700; color: var(--white);
     line-height: 1.3; margin: 0 0 22px;
     text-wrap: balance;
+    overflow-wrap: break-word;
+    word-break: break-word;
+    min-width: 0;
   }
   #sails-spec-blog h3 {
     font-size: 21px; font-weight: 600; color: var(--white);
     margin: 34px 0 14px;
     text-wrap: balance;
   }
-  #sails-spec-blog p { margin: 0 0 18px; font-size: 16.5px; }
+  #sails-spec-blog p { margin: 0 0 18px; font-size: 16.5px; overflow-wrap: break-word; }
   #sails-spec-blog p strong { color: var(--white); font-weight: 600; }
   #sails-spec-blog em { font-style: italic; }
 
@@ -129,6 +132,8 @@
     font-size: 46px; font-weight: 700; line-height: 1.22;
     color: var(--white) !important; margin: 0 0 22px;
     text-wrap: balance;
+    overflow-wrap: break-word;
+    word-break: break-word;
   }
   #sails-spec-blog .hero-title .accent { color: var(--cyan) !important; }
   #sails-spec-blog .hero-dek {
@@ -198,6 +203,7 @@
   #sails-spec-blog .stage { border-bottom: 1px solid rgba(255,255,255,0.05); }
   #sails-spec-blog .stage-alt { background: var(--bg-hero); }
   #sails-spec-blog .stage-head { display: flex; align-items: flex-start; gap: 20px; margin-bottom: 8px; }
+  #sails-spec-blog .stage-head h2 { flex: 1 1 auto; min-width: 0; }
   #sails-spec-blog .stage-num {
     flex-shrink: 0;
     width: 54px; height: 54px; border-radius: 14px;
@@ -642,7 +648,7 @@
 
   /* ── Failure-mode cards ───────────────────────────────── */
   #sails-spec-blog .fail-grid {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    display: grid; grid-template-columns: 1fr;
     gap: 16px; margin: 28px 0;
   }
   #sails-spec-blog .fail-card {
@@ -727,6 +733,13 @@
     #sails-spec-blog .toc { padding: 24px 22px; }
     #sails-spec-blog figcaption { padding: 14px 18px 18px; font-size: 13.5px; }
   }
+  @media (max-width: 680px) {
+    #sails-spec-blog h2 { font-size: 29px; }
+    #sails-spec-blog .hero-title { font-size: 36px; }
+    #sails-spec-blog .stage-num { width: 48px; height: 48px; font-size: 18px; }
+    #sails-spec-blog .stage-head { gap: 14px; }
+  }
+
   @media (max-width: 480px) {
     #sails-spec-blog .wrap, #sails-spec-blog .wrap-wide { padding: 0 20px; }
     #sails-spec-blog .hero-title { font-size: 27px; }
@@ -835,7 +848,7 @@
     <span class="eyebrow">The Engine Underneath</span>
     <div class="stage-head">
       <span class="stage-num">1</span>
-      <h2>Agentic AI: The Engine Underneath&nbsp;All&nbsp;of&nbsp;This</h2>
+      <h2>Agentic AI: The Engine Underneath All of This</h2>
     </div>
     <p>None of what follows works without a shift in what &ldquo;AI&rdquo; means inside the delivery pipeline.</p>
     <p>A chatbot answers a prompt and stops. <strong>Agentic AI</strong> doesn't stop &mdash; it plans, takes actions, checks its own work against a goal, and decides what to do next, often coordinating with other specialized agents along the way. That distinction matters because Spec-Driven Development isn't really about better prompts at all. It's about giving autonomous agents something durable and authoritative enough to plan against, act on, and be held accountable to.</p>
@@ -885,7 +898,7 @@
     <span class="eyebrow">Section 02</span>
     <div class="stage-head">
       <span class="stage-num">2</span>
-      <h2 id="prototype-economy">The Prototype&nbsp;Economy</h2>
+      <h2 id="prototype-economy">The Prototype Economy</h2>
     </div>
     <p>We're entering what many are calling the <strong>Prototype Economy</strong>. The cost of building software has dropped dramatically. Ideas that used to take weeks of engineering effort can become interactive prototypes in hours. Product teams can validate assumptions before committing real engineering investment, which changes both the risk and the economics of building something new.</p>
     <p>But in this economy, the competitive edge isn't who can generate code the fastest. It's who can move fastest through:</p>
@@ -914,7 +927,7 @@
     <span class="eyebrow">Section 03</span>
     <div class="stage-head">
       <span class="stage-num">3</span>
-      <h2 id="code-driven-to-spec-driven">From Code-Driven to&nbsp;Spec-Driven</h2>
+      <h2 id="code-driven-to-spec-driven">From Code-Driven to Spec-Driven</h2>
     </div>
     <p>The traditional delivery pipeline runs Business Requirement &rarr; User Story &rarr; Design &rarr; Development &rarr; Testing &rarr; Deployment. Spec-Driven Development (SDD) reshapes that into something closer to Intent &rarr; Specification &rarr; Architecture &rarr; Code &rarr; Tests &rarr; Deployment &rarr; Runtime Learning.</p>
 
@@ -935,7 +948,7 @@
     <span class="eyebrow">Section 04</span>
     <div class="stage-head">
       <span class="stage-num">4</span>
-      <h2 id="beyond-prompt-engineering">Beyond Prompt&nbsp;Engineering</h2>
+      <h2 id="beyond-prompt-engineering">Beyond Prompt Engineering</h2>
     </div>
     <p>Prompt engineering got AI systems to answer questions well. It doesn't get a fleet of AI agents to collaborate toward a shared, governed outcome. That requires two new disciplines.</p>
 
@@ -986,7 +999,7 @@
     <span class="eyebrow">Section 05</span>
     <div class="stage-head">
       <span class="stage-num">5</span>
-      <h2 id="reverse-engineering">Reverse Engineering&nbsp;Existing&nbsp;Systems</h2>
+      <h2 id="reverse-engineering">Reverse Engineering Existing Systems</h2>
     </div>
     <p>Most enterprises aren't starting from a blank page &mdash; they're sitting on decades of software that already encodes their competitive advantage, often mid-way through <a class="body-link" href="https://sailssoftware.com/cloud-consulting/">cloud modernization programmes</a>. So the first job of an AI-native platform isn't generating new code. <strong>It's understanding what already exists.</strong></p>
     <p>AI can reverse engineer existing repositories, APIs, databases, and infrastructure to extract:</p>
@@ -1006,7 +1019,7 @@
     <span class="eyebrow">Section 06</span>
     <div class="stage-head">
       <span class="stage-num">6</span>
-      <h2 id="living-specifications">Specifications That Never&nbsp;Stop&nbsp;Evolving</h2>
+      <h2 id="living-specifications">Specifications That Never Stop Evolving</h2>
     </div>
     <p>Static documentation goes stale the moment it's written. Business rules change, regulations shift, security advisories land, and customer expectations move. <strong>A spec frozen in time becomes fiction within weeks.</strong></p>
     <p>Dynamic Specification Generation treats the spec as a living system, continuously enriched by:</p>
@@ -1031,7 +1044,7 @@
     <span class="eyebrow">Section 07</span>
     <div class="stage-head">
       <span class="stage-num">7</span>
-      <h2 id="specification-to-code">From Specification&nbsp;to&nbsp;Code</h2>
+      <h2 id="specification-to-code">From Specification to Code</h2>
     </div>
     <p>Once a specification is validated, implementation becomes largely autonomous. Instead of a developer asking a model to &ldquo;build a login page,&rdquo; the system generates the frontend components, backend services, API contracts, authentication flows, database migrations, infrastructure, tests, and deployment manifests &mdash; all derived from the <em>same</em> specification.</p>
 
@@ -1050,7 +1063,7 @@
     <span class="eyebrow">Section 08</span>
     <div class="stage-head">
       <span class="stage-num">8</span>
-      <h2 id="forward-deployed-engineer">The Forward Deployed Engineer,&nbsp;Reimagined</h2>
+      <h2 id="forward-deployed-engineer">The Forward Deployed Engineer, Reimagined</h2>
     </div>
     <p>AI is also reshaping engineering roles. Forward Deployed Engineers (FDEs) increasingly sit at the intersection of customers, domain experts, product, and engineering &mdash; and their highest-leverage work isn't writing production code anymore.</p>
     <p>It's capturing business context, validating assumptions, refining specifications, defining constraints, and supervising AI agents as they execute against those specifications.</p>
@@ -1068,7 +1081,7 @@
 <section class="stage stage-alt">
   <div class="wrap reveal">
     <span class="eyebrow">Setting the Record Straight</span>
-    <h2 id="what-sdd-is-not">What This&nbsp;Isn't</h2>
+    <h2 id="what-sdd-is-not">What This Isn't</h2>
     <p>It's worth being direct about what Spec-Driven Development is <em>not</em>, because &ldquo;the spec is the software&rdquo; can sound like a pitch for no-code hype if you squint at it wrong.</p>
     <div class="myth-list">
       <div class="myth-item">
@@ -1093,7 +1106,7 @@
     <span class="eyebrow">Failure Modes</span>
     <div class="stage-head">
       <span class="stage-num">9</span>
-      <h2 id="where-it-goes-wrong">Where This Can&nbsp;Go&nbsp;Wrong</h2>
+      <h2 id="where-it-goes-wrong">Where This Can Go Wrong</h2>
     </div>
     <p>None of this works by default, and it's worth naming the failure modes plainly rather than only selling the upside.</p>
     <div class="fail-grid">
@@ -1124,7 +1137,7 @@
     <span class="eyebrow">Section 10</span>
     <div class="stage-head">
       <span class="stage-num">10</span>
-      <h2 id="human-judgment">Human Judgment Moves Earlier,&nbsp;Not&nbsp;Away</h2>
+      <h2 id="human-judgment">Human Judgment Moves Earlier, Not Away</h2>
     </div>
     <p>Autonomy doesn't eliminate human judgment &mdash; it relocates it. Instead of reviewing thousands of lines of generated code after the fact, experts review decisions <em>before</em> expensive implementation begins, at gates like:</p>
     <div class="chip-grid">
@@ -1144,7 +1157,7 @@
     <span class="eyebrow">Section 11</span>
     <div class="stage-head">
       <span class="stage-num">11</span>
-      <h2 id="guardrails-security">Guardrails and Security,&nbsp;Built&nbsp;In</h2>
+      <h2 id="guardrails-security">Guardrails and Security, Built In</h2>
     </div>
     <p>Generating software quickly is easy. Generating <em>trustworthy</em> software is hard. Every AI-native delivery platform needs guardrails woven through the lifecycle &mdash; architecture standards, secure coding policies, compliance requirements, privacy controls, API governance, accessibility, and organizational conventions &mdash; enforced continuously rather than left to individual developers to remember.</p>
     <div class="compare-grid">
@@ -1178,7 +1191,7 @@
     <span class="eyebrow">Section 12</span>
     <div class="stage-head">
       <span class="stage-num">12</span>
-      <h2 id="runtime-operations">Runtime Operations: Closing&nbsp;the&nbsp;Loop</h2>
+      <h2 id="runtime-operations">Runtime Operations: Closing the Loop</h2>
     </div>
     <p>Deployment used to be the finish line. In an AI-native SDLC, it's just another source of learning.</p>
     <div class="flow-bar">
@@ -1214,7 +1227,7 @@
 <section class="stage stage-alt">
   <div class="wrap reveal">
     <span class="eyebrow">The Whole System</span>
-    <h2 id="how-it-fits">How It All&nbsp;Fits&nbsp;Together</h2>
+    <h2 id="how-it-fits">How It All Fits Together</h2>
     <p>Nine ideas, one system. It's worth stating plainly how they connect, because none of them work in isolation.</p>
     <p><strong>Agentic AI</strong> is the actor &mdash; autonomous systems capable of planning and taking multi-step action, not just answering a single prompt. <strong>Spec-Driven Development</strong> is the discipline that gives those agents something authoritative to act on, instead of a fresh, ambiguous prompt every time.</p>
     <p>That specification doesn't come from nowhere. <strong>Reverse Engineering</strong> extracts it from the systems an enterprise already runs. <strong>Context Engineering</strong> surrounds it with the standards, policies, and history an agent needs to interpret it correctly. <strong>Dynamic Spec Generation</strong> keeps it current as production, regulation, and business rules change underneath it.</p>
@@ -1234,7 +1247,7 @@
 <section class="stage">
   <div class="wrap reveal">
     <span class="eyebrow">Getting Practical</span>
-    <h2 id="where-to-start">Where to&nbsp;Start</h2>
+    <h2 id="where-to-start">Where to Start</h2>
     <p>This doesn't have to be adopted all at once. A reasonable first step:</p>
     <div class="start-box">
       <p>Pick one active project, reverse-engineer its current specification from the codebase and API contracts as they actually exist today, and run a single loop end-to-end &mdash; spec, generate, test, verify, deploy &mdash; before trying to scale the pattern across a team or a portfolio.</p>
