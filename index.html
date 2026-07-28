@@ -187,7 +187,7 @@
     border-left: 4px solid var(--cyan);
     border-radius: 14px;
     padding: 30px 34px;
-    margin: 36px 0 40px;
+    margin: 36px 0 0;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -265,7 +265,7 @@
 
   /* ── Flow bar (Idea → Validation → …) ─────────────────── */
   #sails-spec-blog .flow-bar {
-    display: flex; flex-wrap: wrap; align-items: center; gap: 10px;
+    display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 10px;
     background: var(--bg-card);
     border: 1px solid rgba(0,185,255,0.22);
     border-radius: 14px; padding: 22px 24px; margin: 26px 0;
@@ -537,7 +537,7 @@
     border: 1px solid rgba(0,185,255,0.2);
     border-radius: 16px;
     padding: 28px 32px;
-    margin: 0 0 8px;
+    margin: 28px 0 0;
   }
   #sails-spec-blog .toc-label {
     font-size: 12px; font-weight: 700; letter-spacing: 2.5px;
@@ -693,6 +693,7 @@
       <span class="tag">AI-Native Delivery</span>
       <span class="tag">Context Engineering</span>
       <span class="tag">Loop Engineering</span>
+      <span class="tag">Reverse Engineering</span>
     </div>
     <h1 class="hero-title">The Spec is the Prompt: Why Specifications Are Becoming the <span class="accent">Primary Artifact</span> of Software Delivery</h1>
     <p class="hero-dek"><em>Why specifications, not code, are becoming the primary artifact of AI-native software delivery.</em></p>
@@ -745,11 +746,7 @@
       <p>The spec is the prompt &mdash; the single artifact every human and every AI agent works from, from intent all the way through to production.</p>
     </div>
 
-  </div>
-</section>
 
-<section class="stage">
-  <div class="wrap reveal">
     <nav class="toc" aria-label="Table of contents">
       <div class="toc-label">What's in this article</div>
       <ol>
