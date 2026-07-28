@@ -186,8 +186,11 @@
     border: 1px solid var(--line);
     border-left: 4px solid var(--cyan);
     border-radius: 14px;
-    padding: 28px 32px;
-    margin: 36px 0 0;
+    padding: 30px 34px;
+    margin: 36px 0 40px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
   #sails-spec-blog .tldr-box .tldr-label {
     font-size: 12px; font-weight: 700; letter-spacing: 2.5px;
@@ -384,6 +387,14 @@
     display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
     gap: 18px; margin-top: 32px; align-items: stretch;
   }
+  #sails-spec-blog .skill-grid.four-up {
+    grid-template-columns: repeat(4, 1fr);
+    gap: 14px;
+  }
+  #sails-spec-blog .skill-grid.four-up .skill-card { padding: 22px 18px; }
+  #sails-spec-blog .skill-grid.four-up .skill-card h3 { font-size: 16px; }
+  #sails-spec-blog .skill-grid.four-up .skill-card p { font-size: 13px; line-height: 1.55; }
+  #sails-spec-blog .skill-grid.four-up .skill-card .sc-num { font-size: 12px; }
   #sails-spec-blog .skill-card {
     background: var(--bg-card);
     border: 1px solid rgba(0,185,255,0.16);
@@ -643,6 +654,7 @@
   #sails-spec-blog .hero-sub { font-size: 17px; }
     #sails-spec-blog .pipe-row { grid-template-columns: repeat(2, 1fr); }
     #sails-spec-blog .compare-grid { grid-template-columns: 1fr; }
+    #sails-spec-blog .skill-grid.four-up { grid-template-columns: repeat(2, 1fr); }
     #sails-spec-blog h2 { font-size: 26px; }
     #sails-spec-blog .stage-head { gap: 16px; }
     #sails-spec-blog .stage-num { width: 46px; height: 46px; font-size: 17px; border-radius: 12px; }
@@ -659,6 +671,7 @@
     #sails-spec-blog .wrap, #sails-spec-blog .wrap-wide { padding: 0 20px; }
     #sails-spec-blog .hero-title { font-size: 27px; }
     #sails-spec-blog .pipe-row { grid-template-columns: 1fr 1fr; gap: 8px; }
+    #sails-spec-blog .skill-grid.four-up { grid-template-columns: 1fr; }
     #sails-spec-blog .pipe-label { font-size: 11.5px; }
     #sails-spec-blog h2 { font-size: 23px; }
     #sails-spec-blog .callout { padding: 26px 22px 22px 52px; }
@@ -732,6 +745,11 @@
       <p>The spec is the prompt &mdash; the single artifact every human and every AI agent works from, from intent all the way through to production.</p>
     </div>
 
+  </div>
+</section>
+
+<section class="stage">
+  <div class="wrap reveal">
     <nav class="toc" aria-label="Table of contents">
       <div class="toc-label">What's in this article</div>
       <ol>
@@ -1129,7 +1147,7 @@
     <p>The real promise of Spec-Driven Development isn't automation. <strong>It's accumulation.</strong></p>
     <p>Every repository reverse engineered. Every architecture reviewed. Every incident resolved. Every specification refined. Each one strengthens the organization's collective engineering knowledge, and the AI becomes progressively better aligned with how your organization actually designs, builds, secures, tests, and operates software.</p>
 
-    <div class="skill-grid">
+    <div class="skill-grid four-up">
       <div class="skill-card">
         <span class="sc-num">01</span>
         <h3>Specifications</h3>
